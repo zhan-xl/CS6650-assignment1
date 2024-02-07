@@ -28,7 +28,7 @@ public class WriterService {
     writer.write("\n");
     for (ResponseLog responseLog : responseList) {
       String line = responseLog.getStartTime() + ", " + responseLog.getRequestType() + ", "
-          + responseLog.getLatency() + ", " + responseLog.getStatusCode();
+          + responseLog.getLatency() + ", " + responseLog.getStatusCode() + ",";
       writer.write(line);
       writer.write("\n");
     }
