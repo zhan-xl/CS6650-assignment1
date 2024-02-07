@@ -64,9 +64,9 @@ public class PostRequestService {
 
   public void makePostRequest() throws InterruptedException {
     // Creating a blocking queue to store random generated RideEntries.
-    BlockingQueue<RideEntry> queue = new ArrayBlockingQueue<>(100);
+    BlockingQueue<RideEntry> queue = new ArrayBlockingQueue<>(200);
     // Producer service to generate random RideEntries.
-    ExecutorService producerService = new ThreadPoolExecutor(2, 4, 120, TimeUnit.SECONDS,
+    ExecutorService producerService = new ThreadPoolExecutor(4, 8, 120, TimeUnit.SECONDS,
         new LinkedBlockingDeque<>());
     for (int i = 0; i < numOfRequests; i++) {
       producerService.execute(new RideProducer(queue));

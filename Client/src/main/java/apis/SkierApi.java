@@ -13,7 +13,7 @@ public class SkierApi {
 
   private final String url;
   private final HttpClient httpClient = HttpClient.newBuilder().version(Version.HTTP_1_1)
-      .connectTimeout(Duration.ofSeconds(10)).build();
+      .connectTimeout(Duration.ofSeconds(4)).build();
 
   public SkierApi(String url) {
     this.url = url;
