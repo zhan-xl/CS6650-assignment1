@@ -26,9 +26,26 @@ The consumer threads take a ride entry from the blocking queue and send the requ
 
 ![Alt text](https://github.com/zhan-xl/CS6650-assignment1/blob/0f5c133f56de3093a3c42a18cc504b7ff9825c29/pics/Screenshot%202024-02-07%20at%201.44.18%E2%80%AFPM.png)
 
+
 **Second run** 
-The maximun number of threads is 168 and the initial number of threads is 32. The total throughout predicted by little's law is: throughtout  = [average number of concurrent threads] / [mean response time] = 100 / 0.061 = 1639 requests per seconde. I think the difference is caused by average number of concurrent threads is more than 100. Becasue the maximum number threads is started when the first of the 32 initial threads is end, not the last of the initial thread ends.
+
+![Alt text](https://github.com/zhan-xl/CS6650-assignment1/blob/118957af6bff00bc2fec31a2ecb8b7dbe29e1fb7/pics/servlet-run-2.png)
+
+The maximun number of threads is 168 and the initial number of threads is 32. The total throughout predicted by little's law is: throughtout  = [average number of concurrent threads] / [mean response time] = 100 / 0.061 = 1639 requests per seconde. I think the difference is caused by average number of concurrent threads is likely more than 100. Becasue the maximum number threads is started when the first of the 32 initial threads is end, not the last of the initial thread ends.
+
+**Note:** I have achieved throughout 3500 request / second before writing this report. The above result is run during the day.
 
 **This is the result from the server with Spring framework.**
 
-![Alt text]
+**First Run**
+
+![Alt text](https://github.com/zhan-xl/CS6650-assignment1/blob/118957af6bff00bc2fec31a2ecb8b7dbe29e1fb7/pics/sprint-run-1.png)
+
+**Second Run**
+
+![Alt text](https://github.com/zhan-xl/CS6650-assignment1/blob/118957af6bff00bc2fec31a2ecb8b7dbe29e1fb7/pics/sprint-run-2.png)
+
+## Throughout plot over time
+
+
+![Alt text](https://github.com/zhan-xl/CS6650-assignment1/blob/acb563d002100a987342c1f72a8a316d993d7c95/pics/Screenshot%202024-02-07%20at%203.12.59%E2%80%AFPM.png)
