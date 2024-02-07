@@ -18,3 +18,17 @@ This is the core class in the application, which sends 200k post requests to the
 
 The consumer threads take a ride entry from the blocking queue and send the request. Initially, according to the instruction, I created 32 threads and stored them inside a list. I used a while loop to check if any of the threads are done. If so, the main method would start more threads until it reaches a maximum thread number that I set ahead. Then it will use those threads to finish the rest of the post requests. I kept changing the number of maximum threads to find out the fastest way to complete the requests. Since the total number of requests is 200k and each thread should make 1000 requests, the total number of threads we need is 200 threads. Since we started with 32, then there are 168 threads left. So, I found that to run the system as fast as possible, we need no fewer than 168 threads to run after the initial 32 threads. This way, all the remaining threads would end almost simultaneously.
 
+## Client result
+
+**This is the result from the server with Java Servlet.**
+
+**First run**
+
+![Alt text](https://github.com/zhan-xl/CS6650-assignment1/blob/0f5c133f56de3093a3c42a18cc504b7ff9825c29/pics/Screenshot%202024-02-07%20at%201.44.18%E2%80%AFPM.png)
+
+**Second run** 
+The maximun number of threads is 168 and the initial number of threads is 32. The total throughout predicted by little's law is: throughtout  = [average number of concurrent threads] / [mean response time] = 100 / 0.061 = 1639 requests per seconde. I think the difference is caused by average number of concurrent threads is more than 100. Becasue the maximum number threads is started when the first of the 32 initial threads is end, not the last of the initial thread ends.
+
+**This is the result from the server with Spring framework.**
+
+![Alt text]
